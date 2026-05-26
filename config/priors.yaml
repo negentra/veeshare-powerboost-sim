@@ -1,0 +1,56 @@
+# priors.yaml
+# Behavioural input distributions for synthetic charging session generation.
+# Calibrated against ElaadNL open dashboard (2018-2020) order of magnitude.
+# These are PRIORS, not direct empirical fits. Outputs derived from these
+# are simulation-derived and must not be presented as measured data.
+
+arrival_time:
+  description: "Bimodal mixture of two truncated normals over 0-24h."
+  morning_peak:
+    mean_hour: 8.5
+    std_hour: 1.5
+    weight: 0.45
+  evening_peak:
+    mean_hour: 18.5
+    std_hour: 2.0
+    weight: 0.45
+  off_peak_uniform_weight: 0.10
+
+session_duration_hours:
+  description: "Log-normal session duration, μ=ln(3.5h), σ=0.55."
+  mu_log: 1.2528
+  sigma_log: 0.55
+  min_clip: 0.25
+  max_clip: 14.0
+
+energy_demand_kwh:
+  description: "Log-normal per-session energy, μ=ln(12kWh), σ=0.6, capped 80."
+  mu_log: 2.4849
+  sigma_log: 0.6
+  min_clip: 1.0
+  max_clip: 80.0
+
+charging_power_mix:
+  description: "Power-level mixture; values are kW ranges."
+  one_phase:
+    weight: 0.75
+    min_kw: 3.7
+    max_kw: 7.4
+  three_phase:
+    weight: 0.20
+    min_kw: 11.0
+    max_kw: 22.0
+  dc_fast:
+    weight: 0.05
+    min_kw: 50.0
+    max_kw: 150.0
+
+day_of_week_multiplier:
+  description: "Multiplier applied to arrival intensity per weekday index (Mon=0)."
+  monday: 1.0
+  tuesday: 1.0
+  wednesday: 1.0
+  thursday: 1.0
+  friday: 1.0
+  saturday: 0.7
+  sunday: 0.5

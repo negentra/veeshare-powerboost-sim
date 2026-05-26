@@ -1,0 +1,99 @@
+# scenarios.yaml
+# Sweep parameters per cluster, with per-mode overrides.
+# Invoked via: python run.py --mode {smoke|audit|full}
+
+cluster1_protocol:
+  node_counts: [100, 500, 1000, 2500, 5000]
+  repetitions: 5
+  sim_minutes: 30
+  gossip_k: 8
+  tx_rate_per_node_per_min: 2.0
+  finality_quorum: 0.667
+  dso_broadcast_period_sec: 60.0
+  dso_loss_pct: 1.0
+  witness_threshold: 3
+  resilience_test_loss_pct: 5.0
+  resilience_test_n: 1000
+
+cluster2_loadbalance:
+  penetration_pcts: [30, 50, 70]
+  regimes: ["baseline", "coordinated"]
+  repetitions: 3
+  vehicle_population: 10000
+  week_hours: 168
+  bucket_minutes: 15
+  station_count: 50
+  substation_count: 6
+  headline_penetration: 50
+
+cluster3_pinn:
+  forecast_horizon_hours: 1
+  lookback_hours: 24
+  weeks_total: 8
+  weeks_train: 6
+  weeks_val: 1
+  weeks_test: 1
+  model_init_seeds: [0, 1, 2]
+  pinn_fixed_budget_seconds: 60
+  pinn_extended_seconds: 600     # 10 minutes — see comment below
+  lstm_budget_seconds: 60
+  xgb_budget_seconds: 60
+  # Rationale for pinn_extended_seconds = 600 (10 min):
+  #   At ~1.4 sec/epoch on CPU (tanh MLP 6K params, batch 64,
+  #   ~4.5K samples) this gives ~400 epochs. For this smooth
+  #   first-order ODE that is sufficient for >95% convergence
+  #   of both the data MSE and the learned κ. Below ~250 epochs
+  #   κ still drifts. Above ~600 epochs marginal returns become
+  #   negligible on this dataset.
+  pinn_hidden_units: 64
+  pinn_hidden_layers: 2
+  pinn_lambda_physics: 0.1
+  lstm_hidden_units: 64
+  lstm_layers: 2
+  xgb_n_estimators: 200
+
+p5_stretch:
+  enabled: false
+  regime_TR:
+    active_hosts: 12
+    price_floor_pct: -20
+    price_ceiling_pct: 20
+  regime_liberalised:
+    active_hosts: 50
+    price_floor_pct: null
+    price_ceiling_pct: null
+
+mode_overrides:
+  smoke:
+    cluster1:
+      node_counts: [100]
+      repetitions: 1
+      sim_minutes: 5
+      resilience_test_loss_pct: null
+    cluster2:
+      penetration_pcts: [50]
+      repetitions: 1
+      week_hours: 24
+      vehicle_population: 1000
+    cluster3:
+      model_init_seeds: [0]
+      pinn_fixed_budget_seconds: 6
+      pinn_extended_seconds: 8
+      lstm_budget_seconds: 6
+      xgb_budget_seconds: 6
+      weeks_total: 3
+      weeks_train: 1
+      weeks_val: 1
+      weeks_test: 1
+    p5_enabled: false
+
+  audit:
+    cluster3:
+      pinn_extended_seed_count: 1
+    p5_enabled: true     # Full audit-grade deliverable includes counterfactual
+
+  full:
+    cluster3:
+      pinn_extended_seed_count: 3
+    p5_enabled: true
+

@@ -1,0 +1,21 @@
+# context.yaml
+# Qualitative reference values for scenario interpretation only.
+# NEVER used as simulation input — only quoted in SUMMARY.md narrative.
+# Source: published Portugal AFIR & EU mobility roadmaps, order of magnitude.
+
+afir_pt_ev_share_pct:
+  2025: 3
+  2027: 8
+  2030: 20
+  2035: 50
+
+scenario_anchors:
+  "30pct_pen": "Mid-2030s steady state (Portugal AFIR trajectory)."
+  "50pct_pen": "Late-2030s upper bound, EU AFIR aggressive scenario."
+  "70pct_pen": "Stress test — exceeds central planning expectations through 2040."
+
+mobie_network_reference:
+  description: "Order-of-magnitude only; not used as topology source."
+  total_charging_points_pt_2025: 13000
+  lisbon_district_charging_points_2025: 1563
+  source: "MOBI.E annual report order of magnitude; not API-fetched."

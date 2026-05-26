@@ -1,0 +1,10 @@
+﻿# seed.yaml
+# Root seed for all stochastic operations in the simulation.
+# Per-module seeds are derived deterministically from this via:
+#   module_seed = int(sha256(root_seed.bytes + module_name.bytes).hexdigest()[:8], 16)
+# See src/utils/seed.py.
+# Changing this value yields a fully independent realisation; keeping it
+# constant guarantees bit-exact reproduction of all 20 headline metrics.
+seed_root: 42
+
+

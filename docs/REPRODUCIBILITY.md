@@ -1,0 +1,101 @@
+# Reproducibility Guide
+
+This project is deterministic for a fixed configuration, seed, Python
+environment, and dependency set.
+
+## Root Seed
+
+The root seed is stored in:
+
+```text
+config/seed.yaml
+```
+
+Example:
+
+```yaml
+seed_root: 400
+```
+
+Each simulation module derives its own deterministic sub-seed from this root
+seed. Changing the root seed creates a new independent simulation realisation.
+
+## Recommended Run Pattern
+
+Use explicit output directories so one run does not overwrite another:
+
+```bash
+python run.py --mode full --out-dir outputs_seed400
+```
+
+Avoid relying on the default `outputs/` directory for important evidence.
+
+## Manifest
+
+Every run writes:
+
+```text
+<out-dir>/logs/run_manifest.json
+```
+
+This file records:
+
+- run mode
+- root seed
+- timestamp
+- Python version
+- package versions
+- input config hashes
+- output hashes
+- wall time
+- validation status
+
+Keep this file with every result package.
+
+## Validation
+
+Every run writes:
+
+```text
+<out-dir>/logs/validation_report.json
+```
+
+Use the run only if:
+
+```json
+"critical_failed_count": 0
+```
+
+Advisory warnings should be reviewed and explained. In the latest full runs,
+these advisory warnings are expected:
+
+- `V09`: coordinated unmet demand is above the 5% advisory threshold.
+- `V12`: extended PINN training has worse MAE than fixed-budget PINN.
+- `V16`: headline uncertainty columns are not implemented.
+
+## Multi-Seed Evidence
+
+Single-seed results are reproducible, but not enough to show variability. For
+reporting, prefer several seeds:
+
+```powershell
+.\scripts\run_multiseed.ps1 -Seeds 100,200,300,400 -RunLabel final
+```
+
+Then compare:
+
+```text
+outputs_multiseed_final/seed100/tables/headline_numbers.csv
+outputs_multiseed_final/seed200/tables/headline_numbers.csv
+outputs_multiseed_final/seed300/tables/headline_numbers.csv
+outputs_multiseed_final/seed400/tables/headline_numbers.csv
+```
+
+Report the mean and seed range for metrics that vary materially.
+
+## Generated Files Are Not Versioned
+
+Generated outputs are ignored by Git. This keeps the repository small and
+prevents accidental mixing of old and new evidence.
+
+To share evidence, send the output folder separately.

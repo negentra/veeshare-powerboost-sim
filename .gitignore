@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+
+# Test/coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# Virtual envs
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Generated output artefacts
+outputs/
+outputs_*/
+outputs-seed*/
+outputs_seed*/
+outputs_final_*/
+outputs_multiseed_*/
+sonuclar/
+sonu?lar/
+sonu*lar/
+backups/
+*.zip
+*.launch.log
+*.launch.err.log
+*.bak
+
+# Local deliverable documents are not required to run the code
+*.pdf
+*.docx
+~$*.docx
+
+# Local notes
+codex resume.txt
+multi_seed_run.bat
+run_final_multiseed.ps1
