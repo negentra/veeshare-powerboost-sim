@@ -2,6 +2,24 @@
 
 All notable changes to the VeeShare PowerBoost audit simulation.
 
+## [v3.1.5] — 2026-06 (reviewer ergonomics)
+
+- **Added `--seed` CLI override to `run.py`.** A reviewer can now reproduce
+  any single seed directly, e.g. `python run.py --mode full --seed 100`,
+  without editing `config/seed.yaml`. When omitted, behaviour is unchanged
+  (the `seed_root` from `config/seed.yaml` is used). The effective seed is
+  recorded in `run_manifest.json`.
+- **Non-breaking.** It does not change any default-run numbers and is
+  mathematically equivalent to editing `seed_root`: both feed the same root
+  seed into `set_global_seeds`, which derives all per-module sub-seeds.
+- **`scripts/run_multiseed.ps1` simplified** to pass `--seed` per run instead
+  of rewriting and restoring `config/seed.yaml`; outputs and numbers are
+  identical to the previous method.
+- **Docs updated** (`docs/REPRODUCIBILITY.md`, `docs/RUNBOOK.md`) with the
+  single-command per-seed pattern.
+- No simulation-code logic changes vs v3.1.4; all 20 headline metrics, the P5
+  counterfactual, the 4 figures, and the validation gates are unchanged.
+
 ## [v3.1.4] — 2026-05 (PowerBoost submission release)
 
 - **PowerBoost Innovation Audit submission-ready release.** This is the

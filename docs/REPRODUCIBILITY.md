@@ -20,6 +20,16 @@ seed_root: 400
 Each simulation module derives its own deterministic sub-seed from this root
 seed. Changing the root seed creates a new independent simulation realisation.
 
+You can override the root seed for a single run without editing the file, using
+the `--seed` flag (recommended for reviewers reproducing one seed):
+
+```bash
+python run.py --mode full --seed 400 --out-dir outputs_seed400
+```
+
+`--seed` is equivalent to setting `seed_root` in `config/seed.yaml`; the
+effective seed is recorded in `logs/run_manifest.json`.
+
 ## Recommended Run Pattern
 
 Use explicit output directories so one run does not overwrite another:

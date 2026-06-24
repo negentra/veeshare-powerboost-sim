@@ -120,7 +120,12 @@ outputs_multiseed_final/
 `-- _logs/
 ```
 
-The script restores `config/seed.yaml` when it finishes.
+Each seed is passed to `run.py` via `--seed`; `config/seed.yaml` is left
+unchanged. To reproduce a single seed directly:
+
+```bash
+python run.py --mode full --seed 100 --out-dir outputs_seed100
+```
 
 ## How To Know The Run Worked
 

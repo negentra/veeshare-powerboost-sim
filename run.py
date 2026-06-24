@@ -137,6 +137,13 @@ def main() -> int:
         "--out-dir", default="outputs",
         help="Output directory (default: outputs). Relative paths are resolved from the project root.",
     )
+    parser.add_argument(
+        "--seed", type=int, default=None,
+        help="Override the root seed from config/seed.yaml for this run "
+             "(e.g. --seed 100). When omitted, seed_root from config/seed.yaml is used. "
+             "Setting this is equivalent to editing seed_root in config/seed.yaml but "
+             "leaves the file untouched; the effective seed is recorded in run_manifest.json.",
+    )
     args = parser.parse_args()
     mode = args.mode
 
@@ -169,8 +176,12 @@ def main() -> int:
 
     t0 = time.time()
     seed_root, cfg, seed_path, priors_path, scen_path, ctx_path = load_configs(mode)
+    if args.seed is not None:
+        seed_root = args.seed
     set_global_seeds(seed_root, also_torch=True)
-    log.info("Seed root = %d", seed_root)
+    log.info("Seed root = %d%s", seed_root,
+             " (overridden via --seed; config/seed.yaml left unchanged)"
+             if args.seed is not None else "")
 
     # ---- Cluster 1 ----
     log.info("Running Cluster 1 (protocol + DSO + transparency)...")
