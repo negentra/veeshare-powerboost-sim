@@ -15,7 +15,7 @@ HTML_TEMPLATE = Template(
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>VeeShare PowerBoost Audit — Auto Report</title>
+<title>VeeShare Grid Flexibility Audit — Simulation Report</title>
 <style>
   body { font-family: -apple-system, system-ui, sans-serif; max-width: 920px;
          margin: 2em auto; padding: 0 1em; color: #222; line-height: 1.5; }
@@ -45,7 +45,7 @@ HTML_TEMPLATE = Template(
 </head>
 <body>
 
-<h1>VeeShare PowerBoost Innovation Audit — Simulation Report</h1>
+<h1>VeeShare: Decentralised P2P EV Charging Network &amp; Grid Flexibility Audit — Simulation Report</h1>
 
 <div class="meta">
 Run ID: {{ run_id }}<br>

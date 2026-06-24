@@ -1,13 +1,16 @@
-# VeeShare PowerBoost Audit Simulation
+# VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility Audit
 
-Reproducible simulation and evidence-generation code for the **VeeShare PowerBoost
-Innovation Audit**, developed by **Negentra Yazılım ve Oyun Teknolojileri A.Ş.**
+Reproducible simulation and evidence-generation code for
+**VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility Audit**,
+developed by **Negentra Yazılım ve Oyun Teknolojileri A.Ş.**
 
 > **Repository boundary.** This repository contains simulation and reproducibility
-> code for the VeeShare PowerBoost innovation audit. It does **not** contain
-> production platform code, commercial deployment logic, real user data, payment
-> infrastructure, DSO integrations, OCPP production integrations, token/crypto
-> logic, or operational charger-control software.
+> code for *VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility
+> Audit*, carried out under the PowerBoost Open Call / GreenGrid Eurocluster
+> innovation audit. It does **not** contain production platform code, commercial
+> deployment logic, real user data, payment infrastructure, DSO integrations, OCPP
+> production integrations, token/crypto logic, or operational charger-control
+> software.
 
 ## Purpose
 
@@ -22,14 +25,19 @@ deployment decisions without pilot validation and expert review.
 
 ## Audit context
 
-This work supports the **VeeShare PowerBoost Innovation Audit** under the
-**GreenGrid Eurocluster** cascade-funding programme (EU Single Market Programme,
-**SMP-COSME**). The repository is scoped narrowly to simulation, benchmarking,
-reproducibility, synthetic-data generation, chart generation, and audit-evidence
-packaging for that audit.
+This repository supports **VeeShare: Decentralised P2P EV Charging Network &
+Grid Flexibility Audit**, submitted under the **PowerBoost Open Call** of the
+**GreenGrid Eurocluster** cascade-funding programme (European Union Single
+Market Programme, **SMP-COSME**).
 
-**Funding acknowledgment:** This activity has received support from the GreenGrid
-Eurocluster project under the European Union Single Market Programme (SMP-COSME).
+The repository is scoped narrowly to simulation, benchmarking, reproducibility,
+synthetic-data generation, chart generation, and audit-evidence packaging for
+that audit.
+
+## Funding acknowledgement
+
+This activity has received support from the GreenGrid Eurocluster project under
+the European Union Single Market Programme (SMP-COSME).
 
 ## What this repository contains
 
@@ -56,7 +64,7 @@ Synthetic parameters live in `config/`; see `data/synthetic/README.md`.
 ```text
 .
 |-- README.md
-|-- LICENSE                 Apache License 2.0 (full text)
+|-- LICENSE                 Apache License, Version 2.0 (full text)
 |-- NOTICE                  Attribution and funding notice
 |-- run.py                  Main entry point
 |-- requirements.txt
@@ -230,13 +238,21 @@ Smoke output is for pipeline sanity only, not audit evidence.
 
 ## Disclaimer
 
+The repository is provided by Negentra for audit transparency and
+reproducibility purposes. All results are simulation-derived and require pilot
+validation.
+
 THE SOFTWARE AND ALL SIMULATION OUTPUTS ARE PROVIDED "AS IS", WITHOUT WARRANTY
 OF ANY KIND, EXPRESS OR IMPLIED. THIS REPOSITORY IS FOR **SIMULATION AND AUDIT
 REPRODUCIBILITY ONLY**. DO NOT USE OUTPUTS FOR PRODUCTION DEPLOYMENT, LIVE
 GRID OPERATION, REGULATORY FILINGS, OR INVESTMENT DECISIONS WITHOUT INDEPENDENT
 FIELD VALIDATION.
 
-## License
+Publication of this repository does not imply that the European Union, GreenGrid
+Eurocluster, Sunrise Tech Park, or the PowerBoost Open Call endorses the
+software, validates the simulation results, or certifies the repository.
+
+## Licence
 
 Licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE) and
 [NOTICE](NOTICE).

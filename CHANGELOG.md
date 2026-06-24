@@ -1,10 +1,22 @@
 # Changelog
 
-All notable changes to the VeeShare PowerBoost audit simulation.
+All notable changes to **VeeShare: Decentralised P2P EV Charging Network &
+Grid Flexibility Audit** simulation code.
+
+## [v3.1.7] — 2026-06 (scope, funding and licence alignment)
+
+- **Project title standardised** across README, NOTICE, `pyproject.toml`, runbook,
+  `run.py`, and generated report/summary templates.
+- **Repository boundary** updated for PowerBoost Open Call / GreenGrid Eurocluster
+  audit scope.
+- **Funding acknowledgement** section added to README with SMP-COSME wording;
+  non-endorsement disclaimer for EU / GreenGrid / Sunrise Tech Park / PowerBoost.
+- **Licence references** remain Apache License, Version 2.0 throughout.
 
 ## [v3.1.6] — 2026-06 (Apache-2.0 audit release hygiene)
 
-- **License changed from MIT to Apache License, Version 2.0.** Added root `LICENSE`
+- **Licence changed to Apache License, Version 2.0** (replacing the prior licence).
+  Added root `LICENSE`
   (full text), `NOTICE`, and `SPDX-License-Identifier: Apache-2.0` headers.
 - **README rewritten** for EU cascade-funding audit scope: repository boundary
   statement, contains/does-not-contain lists, reproducibility, manifest hashes,

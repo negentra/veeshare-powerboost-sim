@@ -1,6 +1,6 @@
 # Copyright 2026 Negentra Yazılım ve Oyun Teknolojileri A.Ş.
 # SPDX-License-Identifier: Apache-2.0
-"""VeeShare PowerBoost Audit Simulation — single entry point.
+"""VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility Audit — entry point.
 
 Usage:
     python run.py --mode {smoke|audit|full}
@@ -130,7 +130,9 @@ def load_configs(mode: str) -> tuple[int, dict, Path, Path, Path, Path]:
 # Main
 # ---------------------------------------------------------------------------
 def main() -> int:
-    parser = argparse.ArgumentParser(description="VeeShare PowerBoost simulation")
+    parser = argparse.ArgumentParser(
+        description="VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility Audit simulation"
+    )
     parser.add_argument(
         "--mode", choices=["smoke", "audit", "full"], default="audit",
         help="Run mode (default: audit)",
@@ -174,7 +176,7 @@ def main() -> int:
                   logging.StreamHandler(sys.stdout)],
     )
     log = logging.getLogger("run")
-    log.info("=== VeeShare PowerBoost Audit Simulation — mode=%s ===", mode)
+    log.info("=== VeeShare Grid Flexibility Audit Simulation — mode=%s ===", mode)
 
     t0 = time.time()
     seed_root, cfg, seed_path, priors_path, scen_path, ctx_path = load_configs(mode)
@@ -352,7 +354,7 @@ def main() -> int:
 
     # ---- Final delivery message ----
     print("\n" + "=" * 67)
-    print("VeeShare PowerBoost Audit Simulation — Run Complete")
+    print("VeeShare Grid Flexibility Audit Simulation — Run Complete")
     print("=" * 67)
     print(f"Run ID:        {manifest['run_id']}")
     print(f"Mode:          {mode}")

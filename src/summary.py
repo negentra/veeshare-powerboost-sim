@@ -57,7 +57,9 @@ def build_summary_md(
 
     parts = []
 
-    parts.append("# VeeShare PowerBoost Audit — Simulation Summary\n")
+    parts.append(
+        "# VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility Audit — Simulation Summary\n"
+    )
     parts.append(f"*Run mode: `{mode}`. All figures simulation-derived.*\n")
 
     # ---- Section 1: Methodology & Data Architecture ----

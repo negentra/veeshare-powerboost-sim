@@ -1,7 +1,8 @@
 # Runbook For Non-Technical Reviewers
 
-This runbook explains how to run and test the VeeShare PowerBoost simulation
-from a clean checkout.
+This runbook explains how to run and test **VeeShare: Decentralised P2P EV
+Charging Network & Grid Flexibility Audit** simulation code from a clean
+checkout.
 
 ## What You Need
 
