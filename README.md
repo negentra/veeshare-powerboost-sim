@@ -5,9 +5,9 @@ Reproducible simulation and evidence-generation code for
 developed by **Negentra Yazılım ve Oyun Teknolojileri A.Ş.**
 
 > **Repository boundary.** This repository contains simulation and reproducibility
-> code for *VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility
-> Audit*, carried out under the PowerBoost Open Call / GreenGrid Eurocluster
-> innovation audit. It does **not** contain production platform code, commercial
+> code for 'VeeShare: Decentralised P2P EV Charging Network & Grid Flexibility
+> Audit', carried out under the PowerBoost Open Call / GreenGrid Eurocluster
+> innovation audit. It does not contain production platform code, commercial
 > deployment logic, real user data, payment infrastructure, DSO integrations, OCPP
 > production integrations, token/crypto logic, or operational charger-control
 > software.
@@ -38,6 +38,12 @@ that audit.
 
 This activity has received support from the GreenGrid Eurocluster project under
 the European Union Single Market Programme (SMP-COSME).
+
+This repository is provided by Negentra for audit transparency and
+reproducibility purposes. All results are simulation-derived and require pilot
+validation. The acknowledgement above does not imply endorsement, certification,
+or validation of the software or simulation results by the European Union,
+GreenGrid Eurocluster, PowerBoost, or any consortium partner.
 
 ## What this repository contains
 
@@ -238,19 +244,11 @@ Smoke output is for pipeline sanity only, not audit evidence.
 
 ## Disclaimer
 
-The repository is provided by Negentra for audit transparency and
-reproducibility purposes. All results are simulation-derived and require pilot
-validation.
-
 THE SOFTWARE AND ALL SIMULATION OUTPUTS ARE PROVIDED "AS IS", WITHOUT WARRANTY
 OF ANY KIND, EXPRESS OR IMPLIED. THIS REPOSITORY IS FOR **SIMULATION AND AUDIT
 REPRODUCIBILITY ONLY**. DO NOT USE OUTPUTS FOR PRODUCTION DEPLOYMENT, LIVE
 GRID OPERATION, REGULATORY FILINGS, OR INVESTMENT DECISIONS WITHOUT INDEPENDENT
 FIELD VALIDATION.
-
-Publication of this repository does not imply that the European Union, GreenGrid
-Eurocluster, Sunrise Tech Park, or the PowerBoost Open Call endorses the
-software, validates the simulation results, or certifies the repository.
 
 ## Licence
 
