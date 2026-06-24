@@ -2,6 +2,21 @@
 
 All notable changes to the VeeShare PowerBoost audit simulation.
 
+## [v3.1.6] — 2026-06 (Apache-2.0 audit release hygiene)
+
+- **License changed from MIT to Apache License, Version 2.0.** Added root `LICENSE`
+  (full text), `NOTICE`, and `SPDX-License-Identifier: Apache-2.0` headers.
+- **README rewritten** for EU cascade-funding audit scope: repository boundary
+  statement, contains/does-not-contain lists, reproducibility, manifest hashes,
+  disclaimer, and funding acknowledgment.
+- **Repository structure clarified:** `data/synthetic/README.md`,
+  `outputs/sample/README.md`; improved `.gitignore` for secrets, notebooks, and
+  local generated outputs.
+- **Wording:** replaced ambiguous "production audit run" phrasing in `run.py` with
+  "primary audit simulation run".
+- **Metadata:** `pyproject.toml` now declares `license = "Apache-2.0"`;
+  `src/__init__.py` version aligned to `0.3.5`.
+
 ## [v3.1.5] — 2026-06 (reviewer ergonomics)
 
 - **README funding acknowledgment.** Documents GreenGrid Eurocluster / EU SMP-COSME
@@ -120,7 +135,7 @@ All notable changes to the VeeShare PowerBoost audit simulation.
 
 ## [v3.0.0] — 2026-05
 
-- First production implementation of spec v3.
+- First complete implementation of spec v3.
 - Three run modes (smoke / audit / full).
 - 20 headline metrics, 18-row Cluster 2 sweep, 10-row Cluster 3 benchmark.
 - DSO interface model and transparency tracking integrated into Cluster 1.

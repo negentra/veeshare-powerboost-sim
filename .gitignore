@@ -6,6 +6,7 @@ __pycache__/
 .Python
 *.egg-info/
 .eggs/
+*.egg
 
 # Test/coverage
 .pytest_cache/
@@ -13,6 +14,8 @@ __pycache__/
 htmlcov/
 .tox/
 .nox/
+.mypy_cache/
+.ruff_cache/
 
 # Virtual envs
 .venv/
@@ -20,7 +23,11 @@ venv/
 env/
 ENV/
 
-# IDE
+# Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE / OS
 .vscode/
 .idea/
 *.swp
@@ -28,26 +35,52 @@ ENV/
 .DS_Store
 Thumbs.db
 
-# Generated output artefacts
-outputs/
+# Secrets and local credentials (must never be committed)
+.env
+.env.*
+secrets/
+*.pem
+*.key
+*.p12
+*credentials*
+*api_key*
+*apikey*
+
+# Generated output artefacts (synthetic evidence — regenerate locally)
+outputs/**
+!outputs/sample/
+outputs/sample/**
+!outputs/sample/README.md
 outputs_*/
 outputs-seed*/
 outputs_seed*/
 outputs_final_*/
 outputs_multiseed_*/
+_t*/
+_t*
 sonuclar/
 sonu?lar/
 sonu*lar/
 backups/
+
+# Archives and large local artefacts
 *.zip
+*.tar
+*.tar.gz
+*.7z
 *.launch.log
 *.launch.err.log
 *.bak
+*.log
 
-# Local deliverable documents are not required to run the code
+# Local deliverable documents (not required to run the code)
 *.pdf
 *.docx
 ~$*.docx
+
+# Patches and local tooling left over from packaging
+readme-seed.patch
+v3.1.5.patch
 
 # Local notes
 codex resume.txt

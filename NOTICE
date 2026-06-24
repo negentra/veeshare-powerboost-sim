@@ -1,0 +1,19 @@
+VeeShare PowerBoost Audit Simulation
+Copyright 2026 Negentra Yazılım ve Oyun Teknolojileri A.Ş.
+
+This software was developed for the VeeShare PowerBoost Innovation Audit
+simulation and reproducibility evidence package.
+
+Funding acknowledgment:
+This activity has received support from the GreenGrid Eurocluster project
+under the European Union Single Market Programme (SMP-COSME).
+
+Scope:
+This repository contains simulation, benchmark, reproducibility, synthetic-data,
+chart-generation, and audit-evidence code only. It does not contain production
+platform code, commercial deployment logic, real user data, payment
+infrastructure, DSO integrations, OCPP production integrations, token or
+crypto logic, or operational charger-control software.
+
+All numerical outputs are simulation-derived and require independent pilot
+validation before operational, regulatory, or investment use.

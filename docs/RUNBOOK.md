@@ -171,3 +171,8 @@ outputs_multiseed_final/
 
 Do not edit CSV files manually. If a value looks wrong, rerun the simulation or
 inspect the source code and manifest.
+
+## Licence
+
+This simulation code is licensed under the Apache License, Version 2.0. See
+`LICENSE` and `NOTICE` in the repository root.

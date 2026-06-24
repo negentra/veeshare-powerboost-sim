@@ -1,3 +1,5 @@
+# Copyright 2026 Negentra Yazılım ve Oyun Teknolojileri A.Ş.
+# SPDX-License-Identifier: Apache-2.0
 """VeeShare PowerBoost Audit Simulation — single entry point.
 
 Usage:
@@ -5,7 +7,7 @@ Usage:
 
 Modes per spec §1.1:
     smoke  — pipeline sanity test, < 60 sec
-    audit  — production audit run, target ≤ 25 min
+    audit  — primary audit simulation run, target ≤ 25 min
     full   — academic-grade extended run, target ≤ 60 min
 """
 

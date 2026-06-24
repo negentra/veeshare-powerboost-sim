@@ -1,3 +1,5 @@
+# Copyright 2026 Negentra Yazılım ve Oyun Teknolojileri A.Ş.
+# SPDX-License-Identifier: Apache-2.0
 """Run manifest: provenance record for one full simulation run."""
 
 from __future__ import annotations

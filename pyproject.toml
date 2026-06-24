@@ -1,7 +1,9 @@
 [project]
 name = "veeshare-powerboost-sim"
 version = "0.3.5"
-description = "VeeShare PowerBoost Innovation Audit simulation"
+description = "VeeShare PowerBoost Innovation Audit simulation and reproducibility code"
+readme = "README.md"
+license = "Apache-2.0"
 requires-python = ">=3.11"
 
 [tool.ruff]
