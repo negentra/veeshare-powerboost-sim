@@ -230,6 +230,11 @@ questions, not to replace measured DSO or field data.
 
 See [LIMITATIONS.md](LIMITATIONS.md).
 
+## Funding
+
+This activity has received support from the GreenGrid Eurocluster project
+under the European Union Single Market Programme (SMP-COSME).
+
 ## License
 
 MIT. See [LICENSE](LICENSE).

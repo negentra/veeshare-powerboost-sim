@@ -35,7 +35,7 @@ effective seed is recorded in `logs/run_manifest.json`.
 Use explicit output directories so one run does not overwrite another:
 
 ```bash
-python run.py --mode full --out-dir outputs_seed400
+python run.py --mode full --seed 400 --out-dir outputs_seed400
 ```
 
 Avoid relying on the default `outputs/` directory for important evidence.
@@ -79,17 +79,29 @@ Use the run only if:
 Advisory warnings should be reviewed and explained. In the latest full runs,
 these advisory warnings are expected:
 
-- `V09`: coordinated unmet demand is above the 5% advisory threshold.
-- `V12`: extended PINN training has worse MAE than fixed-budget PINN.
-- `V16`: headline uncertainty columns are not implemented.
+- `V09`: coordinated unmet demand is above the 5% advisory threshold in the
+  full scenario.
+- `V12`: extended PINN training currently has worse MAE than fixed-budget PINN.
+- `V16`: headline CSV files do not yet include confidence-interval columns.
 
 ## Multi-Seed Evidence
 
 Single-seed results are reproducible, but not enough to show variability. For
 reporting, prefer several seeds:
 
+Windows PowerShell:
+
 ```powershell
 .\scripts\run_multiseed.ps1 -Seeds 100,200,300,400 -RunLabel final
+```
+
+Alternatively, on any platform:
+
+```bash
+python run.py --mode full --seed 100 --out-dir outputs_multiseed_final/seed100
+python run.py --mode full --seed 200 --out-dir outputs_multiseed_final/seed200
+python run.py --mode full --seed 300 --out-dir outputs_multiseed_final/seed300
+python run.py --mode full --seed 400 --out-dir outputs_multiseed_final/seed400
 ```
 
 Then compare:

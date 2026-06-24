@@ -121,7 +121,18 @@ outputs_multiseed_final/
 ```
 
 Each seed is passed to `run.py` via `--seed`; `config/seed.yaml` is left
-unchanged. To reproduce a single seed directly:
+unchanged.
+
+Alternatively, run the seeds directly (any platform, no PowerShell required):
+
+```bash
+python run.py --mode full --seed 100 --out-dir outputs_multiseed_final/seed100
+python run.py --mode full --seed 200 --out-dir outputs_multiseed_final/seed200
+python run.py --mode full --seed 300 --out-dir outputs_multiseed_final/seed300
+python run.py --mode full --seed 400 --out-dir outputs_multiseed_final/seed400
+```
+
+To reproduce a single seed directly:
 
 ```bash
 python run.py --mode full --seed 100 --out-dir outputs_seed100
@@ -139,9 +150,10 @@ Good sign:
 
 Expected advisory warnings in full mode:
 
-- `V09`: coordinated unmet demand is above the 5% advisory threshold.
-- `V12`: extended PINN is currently worse than fixed-budget PINN.
-- `V16`: headline confidence interval columns are not implemented yet.
+- `V09`: coordinated unmet demand is above the 5% advisory threshold in the
+  full scenario.
+- `V12`: extended PINN training currently has worse MAE than fixed-budget PINN.
+- `V16`: headline CSV files do not yet include confidence-interval columns.
 
 ## What To Send To Someone Else
 

@@ -4,6 +4,10 @@ All notable changes to the VeeShare PowerBoost audit simulation.
 
 ## [v3.1.5] — 2026-06 (reviewer ergonomics)
 
+- **README funding acknowledgment.** Documents GreenGrid Eurocluster / EU SMP-COSME
+  support for this activity.
+- **Markdown consistency pass.** Aligned `--seed` examples and validation-advisory
+  wording across `README.md`, `docs/REPRODUCIBILITY.md`, and `docs/RUNBOOK.md`.
 - **Added `--seed` CLI override to `run.py`.** A reviewer can now reproduce
   any single seed directly, e.g. `python run.py --mode full --seed 100`,
   without editing `config/seed.yaml`. When omitted, behaviour is unchanged
@@ -15,8 +19,8 @@ All notable changes to the VeeShare PowerBoost audit simulation.
 - **`scripts/run_multiseed.ps1` simplified** to pass `--seed` per run instead
   of rewriting and restoring `config/seed.yaml`; outputs and numbers are
   identical to the previous method.
-- **Docs updated** (`docs/REPRODUCIBILITY.md`, `docs/RUNBOOK.md`) with the
-  single-command per-seed pattern.
+- **Docs updated** (`README.md`, `docs/REPRODUCIBILITY.md`, `docs/RUNBOOK.md`)
+  with the single-command per-seed pattern and cross-platform multi-seed examples.
 - No simulation-code logic changes vs v3.1.4; all 20 headline metrics, the P5
   counterfactual, the 4 figures, and the validation gates are unchanged.
 
