@@ -158,6 +158,18 @@ outputs_multiseed_final/
 
 Each seed folder has the same output structure as a normal `run.py` run.
 
+Alternatively, run the seeds directly with `--seed` (any platform, no
+PowerShell required):
+
+```bash
+python run.py --mode full --seed 100 --out-dir outputs_multiseed_final/seed100
+python run.py --mode full --seed 200 --out-dir outputs_multiseed_final/seed200
+python run.py --mode full --seed 300 --out-dir outputs_multiseed_final/seed300
+python run.py --mode full --seed 400 --out-dir outputs_multiseed_final/seed400
+```
+
+Then report the mean and seed range for metrics that vary materially.
+
 ## Important Validation Notes
 
 The latest corrected validation logic treats these as advisory warnings:
@@ -194,15 +206,18 @@ See [docs/OUTPUTS.md](docs/OUTPUTS.md) for details.
 
 ## How To Reproduce A Result
 
-1. Set `seed_root` in `config/seed.yaml`.
+1. Choose a root seed: either set `seed_root` in `config/seed.yaml`, or pass
+   `--seed N` on the command line. `--seed` overrides the file for that run,
+   leaves `config/seed.yaml` untouched, and records the effective seed in
+   `logs/run_manifest.json`.
 2. Run the desired mode with an explicit output directory.
 3. Check `logs/run_manifest.json`.
 4. Check `logs/validation_report.json`.
 
-Example:
+Example (reproduce seed 400 without editing any file):
 
 ```bash
-python run.py --mode full --out-dir outputs_seed400
+python run.py --mode full --seed 400 --out-dir outputs_seed400
 ```
 
 For more detail, see [docs/REPRODUCIBILITY.md](docs/REPRODUCIBILITY.md).
